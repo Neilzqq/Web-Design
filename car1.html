@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car1</title>
+    <style>
+        body {
+            height: 3000vh;
+        }
+
+        .screen{
+            width: 550px;
+            height: 150px;
+        }
+        .bike {
+            /* position: absolute; */
+            left: 200px;
+            position: relative;
+            animation:
+                bike-translate 7s ease-in-out infinite,
+                bike-shake .5s linear infinite .75s;
+        }
+
+        .handle {
+            width: 150px;
+            height: 50px;
+            /* background-color: rgb(126, 41, 41); */
+            display: flex;
+            align-items: center;
+        }
+
+        .left-handle-around {
+            width: 10px;
+            height: 50px;
+            background-color: white;
+            box-shadow: inset 0 0 1px 3px #041830;
+        }
+
+        .right-handle-around {
+            width: 10px;
+            height: 50px;
+            background-color: white;
+            box-shadow: inset 0 0 1px 3px #041830;
+        }
+
+        .right-handle {
+            width: 30px;
+            height: 4px;
+            border-radius: 1px;
+            background: #041830;
+            transform: rotate(20deg);
+        }
+
+        .left-handle {
+            width: 30px;
+            height: 4px;
+            border-radius: 1px;
+            background: #041830;
+            transform: rotate(160deg);
+        }
+
+        .bg-headlight {
+            width: 25px;
+            height: 25px;
+            /* background-color: #000; */
+            border-radius: 50%;
+            border: 5px solid #000;
+        }
+
+        .sm-headlight {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #000;
+            margin-top: 5px;
+            margin-left: 4px;
+        }
+
+        .left-suspension {
+            width: 13px;
+            height: 35px;
+            /* top: 32px; 
+        left: 21px; */
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAECAYAAAC3OK7NAAAAH0lEQVQIW2NkAAIWCYP/IBofYCSkAGYI8QqJsRZkKwCpfwUxsQUgTAAAAABJRU5ErkJggg==) repeat-y;
+            background-size: contain;
+            /* background-size: 100% auto; */
+            /* background-position-y: 1px; */
+            margin-left: 75px;
+
+        }
+
+        .right-suspension {
+            width: 13px;
+            height: 35px;
+            /* top: 32px; left: 21px; */
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAECAYAAAC3OK7NAAAAH0lEQVQIW2NkAAIWCYP/IBofYCSkAGYI8QqJsRZkKwCpfwUxsQUgTAAAAABJRU5ErkJggg==) repeat-y;
+            background-size: contain;
+            /* background-size: 100% auto;
+      background-position-y: 1px; */
+            margin-top: -34px;
+            margin-left: 29px;
+        }
+
+        .left-support {
+            width: 8px;
+            height: 50px;
+            background-color: #fff;
+            /* box-shadow: inset 0 0 1px 3px #041830; */
+            border: 5px solid #000;
+            margin-left: 72px;
+            margin-top: -1px;
+        }
+
+        .right-support {
+            width: 7px;
+            height: 50px;
+            background-color: #fff;
+            /* box-shadow: inset 0 0 1px 3px #041830; */
+            border: 5px solid #000;
+            margin-left: 29px;
+            margin-top: -58px;
+        }
+
+        .wheel {
+            /* overflow: hidden; */
+            width: 25px;
+            height: 110px;
+            bottom: 0;
+            left: 30px;
+            border-radius: 20px;
+            box-shadow: inset 0 0 1px 3px #041830;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAASklEQVQIW2M8snrN/y/MLAwfHjxgYPnymYHx6LLl/7+zsjL8eP2agQkksGbS5P/iAgIMXED8g5MTKNDV9l+Cg4dBSE2d4TsbOwMALuAaA/XaXuUAAAAASUVORK5CYII=) repeat;
+            background-size: 4px 4px;
+            margin-left: 47px;
+            margin-top: -70px;
+            animation-name: wheel;
+            animation-duration:1s;
+            animation-iteration-count: infinite;
+            
+
+        }
+        
+
+        /* .body {
+      top: 29px; left: 30px;
+      border-top: 28px solid #041830;
+      border-right: 20px solid #041830;
+      border-left: 10px solid transparent;
+      border-bottom: 15px solid transparent;
+    } */
+        .carbody1 {
+            /* width: 50px; */
+            /* height: 10px; */
+            /* background-color: #000; */
+            width: 20px;
+            border-top: 5px solid #041830;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            transform: rotateX(180deg);
+            margin-top: -145px;
+            margin-left: 39px;
+        }
+
+        .carbody2 {
+            /* width: 100px; */
+            /* height: px; */
+            border-top: 25px solid #041830;
+            border-left: 25px solid #041830;
+            border-right: 25px solid transparent;
+            /* border-bottom: 5px solid transparent; */
+            margin-right: 200px;
+            margin-top: 1px;
+            transform: rotate(90deg);
+            position: absolute;
+            top: 60px;
+            left: 38px;
+        }
+
+        @keyframes wheel {
+            0% {
+                background-position: 0 0
+            }
+
+            100% {
+                background-position: 0 100%
+            }
+            }
+
+            @keyframes bike-translate {
+            0% {transform: translateY(100%)}
+            6% {transform: translateY(-20%)}
+            8% {transform: translateY(0)}
+            100% {transform: translateY(0)}
+            }
+
+            @keyframes bike-shake {
+  0% {transform: rotate(0)}
+  25% {transform: rotate(2deg)}
+  50% {transform: rotate(0)}
+  75% {transform: rotate(-2deg)}
+  100% {transform: rotate(0)}
+}
+        
+
+        
+
+        
+        
+    </style>
+</head>
+
+<body>
+    <div class="screen">
+    <div class="bike">
+        <div class="handle">
+            <div class="left-handle"></div>
+            <div class="left-handle-around"></div>
+            <div class="bg-headlight">
+                <div class="sm-headlight"></div>
+            </div>
+            <div class="right-handle-around"></div>
+            <div class="right-handle"></div>
+        </div>
+        <div class="suspension">
+            <div class="left-suspension"></div>
+
+            <div class="right-suspension"></div>
+        </div>
+        <div class="support">
+            <div class="left-support"></div>
+            <div class="right-support"></div>
+        </div>
+        <div class="wheel"></div>
+        <div class="carbody1"></div>
+        <div class="carbody2"></div>
+    </div>
+</div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"></script>
+
+      <script>
+        $(".screen").click(function() {
+var el = $(this),
+    newone = el.clone(true);
+
+el.before(newone);
+$(el).remove();
+});
+      </script>
+</body>
+
+</html>
